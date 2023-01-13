@@ -47,7 +47,7 @@ const displayResult = (playerSelection, computerSelection) => {
     document.createElement("div");
   messagePlayer.setAttribute("class", "result-choice");
   messagePlayer.setAttribute("id", "player");
-  messagePlayer.textContent = `Player: ${emoji[playerSelection]}`;
+  messagePlayer.textContent = `Player ${emoji[playerSelection]}`;
   container.appendChild(messagePlayer);
 
   const messageResult =
@@ -63,11 +63,18 @@ const displayResult = (playerSelection, computerSelection) => {
     document.createElement("div");
   messageComputer.setAttribute("class", "result-choice");
   messageComputer.setAttribute("id", "computer");
-  messageComputer.textContent = `Computer: ${emoji[computerSelection]}`;
+  messageComputer.textContent = `Computer ${emoji[computerSelection]}`;
   container.appendChild(messageComputer);
 };
 
 function replayGame() {
+  const containerResult = document.querySelector(".container-result");
+  while (containerResult.firstChild) {
+    containerResult.removeChild(containerResult.firstChild);
+  }
+  const container = document.querySelector(".container");
+  const replayButton = document.querySelector("button.replay");
+  container.removeChild(replayButton);
   scorePLayer.textContent = 0;
   scoreComputer.textContent = 0;
 }
