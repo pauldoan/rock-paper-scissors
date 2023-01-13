@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color: aquamarine; */
+}
+
+.container-button {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-evenly;
+  /* background-color: aqua; */
+  flex: 1;
+  width: 60%;
+}
+
+.container-score {
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: aqua; */
+  flex: 1;
+}
+
+.container-result {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 1;
+  width: 80%;
+}
+
+button.weapon {
+  height: 150px;
+  width: 150px;
+  border-radius: 13%;
+  color: black;
+  border-width: 0;
+  background-color: rgba(128, 128, 128, 0.1);
+  font-size: 60px;
+}
+
+button.replay {
+  height: 50px;
+  width: 100px;
+  border-radius: 13%;
+  color: rgb(163, 163, 163);
+  border-width: 0;
+  background-color: rgba(128, 128, 128, 0.1);
+  font-size: 30px;
+  font-variant-caps: all-petite-caps;
+}
+
+.result-message {
+  flex: 1;
+  font-size: 400px;
+  width: 1000px;
+  border: none;
+  color: lightslategrey;
+  font-variant-caps: all-petite-caps;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  vertical-align: center;
+}
+
+.score-message {
+  flex: 1;
+  font-size: 120px;
+  border: none;
+  color: lightslategrey;
+  font-variant-caps: all-petite-caps;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  vertical-align: bottom;
+  margin: 5%;
+}
+
+.result-choice {
+  flex: 1;
+  font-size: 100px;
+  border: none;
+  color: lightslategrey;
+  font-variant-caps: all-petite-caps;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  vertical-align: bottom;
+}

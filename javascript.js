@@ -23,29 +23,71 @@ let playRound = (playerSelection, computerSelection) => {
   }
 };
 
-let game = () => {
-  let score = 0;
-  for (let i = 0; i < 5; i++) {
-    console.log("Round " + i);
-    let computerChoice = getComputerChoice();
-    let playerChoice = getPlayerChoice();
-    let result = playRound(playerChoice, computerChoice);
-    console.log("Player: " + playerChoice);
-    console.log("Computer: " + computerChoice);
-    console.log("result: " + result);
-    if (result === "win") {
-      score++;
-    } else if (result === "lose") {
-      score--;
-    }
+// let scorePLayerVar = 0;
+// let scoreComputerVar = 0;
+
+const scorePLayer = document.querySelector(".score-message#player");
+const scoreComputer = document.querySelector(".score-message#computer");
+
+const displayResult = (playerSelection, computerSelection) => {
+  result = playRound(playerSelection, computerSelection);
+
+  if (result === "win") {
+    scorePLayer.textContent = Number(scorePLayer.textContent) + 1;
+  } else if (result === "lose") {
+    scoreComputer.textContent = Number(scoreComputer.textContent) + 1;
   }
-  let winner;
-  if (score >= 0) {
-    winner = "player";
-  } else if (score < 0) {
-    winner = "computer";
-  } else winner = "tie";
-  console.log("And the winner is..." + winner + "!");
+
+  const container = document.querySelector(".container-result");
+  const emoji = { rock: "🗿", paper: "🧻", scissors: "✂️" };
+  const resultColors = { win: "green", lose: "red", tie: "grey" };
+
+  const messagePlayer =
+    document.querySelector("div.result-choice#player") ||
+    document.createElement("div");
+  messagePlayer.setAttribute("class", "result-choice");
+  messagePlayer.setAttribute("id", "player");
+  messagePlayer.textContent = `Player: ${emoji[playerSelection]}`;
+  container.appendChild(messagePlayer);
+
+  const messageResult =
+    document.querySelector("div.result-message") ||
+    document.createElement("div");
+  messageResult.setAttribute("class", "result-message");
+  messageResult.style.color = resultColors[result];
+  messageResult.textContent = result;
+  container.appendChild(messageResult);
+
+  const messageComputer =
+    document.querySelector("div.result-choice#computer") ||
+    document.createElement("div");
+  messageComputer.setAttribute("class", "result-choice");
+  messageComputer.setAttribute("id", "computer");
+  messageComputer.textContent = `Computer: ${emoji[computerSelection]}`;
+  container.appendChild(messageComputer);
 };
 
-game();
+function replayGame() {
+  scorePLayer.textContent = 0;
+  scoreComputer.textContent = 0;
+}
+
+function createReplay() {
+  const container = document.querySelector(".container");
+  const replayButton =
+    document.querySelector("button.replay") || document.createElement("button");
+  replayButton.setAttribute("class", "replay");
+  replayButton.textContent = "replay";
+  replayButton.addEventListener("click", replayGame);
+  container.appendChild(replayButton);
+}
+
+const weaponButtons = document.querySelectorAll("button.weapon");
+weaponButtons.forEach((button) =>
+  button.addEventListener("click", () => {
+    playerSelection = button.id;
+    computerSelection = getComputerChoice();
+    createReplay();
+    displayResult(playerSelection, computerSelection);
+  })
+);

@@ -2,9 +2,23 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Page Title</title>
+    <title>Rock, Paper, Scissors!</title>
+    <script src="javascript.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <script src="javascript.js"></script>
+    <div class="container">
+      <div class="container-button">
+        <button class="weapon" id="rock">🗿</button>
+        <button class="weapon" id="paper">🧻</button>
+        <button class="weapon" id="scissors">✂️</button>
+      </div>
+      <div class="container-score">
+        <div class="score-message" id="player">0</div>
+        <div class="score-message">-</div>
+        <div class="score-message" id="computer">0</div>
+      </div>
+      <div class="container-result"></div>
+    </div>
   </body>
 </html>
