@@ -7,18 +7,29 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
+
+    <header class="header">
+      <h1 class="title">Rock, Paper, Scissors.</h1>
+      <h2 class="subtitle">Choose your weapon!</h1>
+    </header>
+
+    <div class="window-container">
+    
       <div class="container-button">
         <button class="weapon" id="rock">🗿</button>
         <button class="weapon" id="paper">🧻</button>
         <button class="weapon" id="scissors">✂️</button>
       </div>
+    
       <div class="container-score">
-        <div class="score-message" id="player">0</div>
+        <div class="score-message" id="player"></div>
         <div class="score-message">-</div>
-        <div class="score-message" id="computer">0</div>
+        <div class="score-message" id="computer"></div>
       </div>
+    
       <div class="container-result"></div>
+    
     </div>
+  
   </body>
 </html>

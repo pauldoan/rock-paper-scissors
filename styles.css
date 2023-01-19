@@ -1,85 +1,109 @@
-.container {
+html {
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: #333;
+}
+
+.header {
+  padding: 10px 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 80px;
+  color: white;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 30px;
+  color: white;
+}
+
+.window-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  /* background-color: aquamarine; */
+  padding: 10px;
 }
 
 .container-button {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  width: 80%;
-  flex: 1;
   padding: 25px;
-  /* background-color: aqua; */
 }
 
 button.weapon {
-  width: 200px;
   line-height: 200px;
-  border-radius: 13%;
+  width: 200px;
+  border-radius: 20%;
   border-width: 0;
+  margin-inline: 40px;
   font-size: 80px;
-  /* background-color: rgba(128, 128, 128, 0.5); */
+  background-color: rgb(152, 152, 152);
 }
 
 .container-score {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex: 1;
-  /* background-color: yellow; */
 }
 
 .score-message {
-  font-size: 120px;
-  font-variant-caps: all-petite-caps;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  margin: 10px;
-  color: lightslategrey;
+  font-size: 100px;
+  margin-inline: 10px;
+  margin-block: 20px;
+  color: rgb(152, 152, 152);
 }
 
 .container-result {
   display: flex;
   justify-content: center;
-  align-items: baseline;
-  flex: 1;
-  width: 80%;
-  /* background-color: violet; */
+  align-items: center;
+  width: 50%;
 }
 
 .result-choice {
   font-size: 80px;
   line-height: 80px;
-  color: lightslategrey;
+  color: rgb(152, 152, 152);
   font-variant-caps: all-petite-caps;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-align: center;
   margin-inline: 10px;
   flex: 1;
-  /* background-color: brown; */
 }
 
 .result-message {
   font-size: 200px;
   line-height: 200px;
-  color: lightslategrey;
+  color: rgb(152, 152, 152);
   font-variant-caps: all-petite-caps;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-align: center;
   flex: 1;
-  /* background-color: coral; */
+  transition: 0.5s;
 }
 
 button.replay {
   margin-top: 20px;
   height: 50px;
-  border-radius: 13%;
+  border-radius: 10px;
   border-width: 0;
-  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
   font-variant-caps: all-petite-caps;
-  color: rgb(163, 163, 163);
-  background-color: rgba(128, 128, 128, 0.1);
+  color: rgb(255, 255, 255);
+  background-color: rgb(71, 71, 71);
+}
+
+button:hover {
+  background-color: rgb(210, 210, 210);
 }
